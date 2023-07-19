@@ -10,6 +10,9 @@ router.get('/new', skillsController.new);
 router.get('/:id', skillsController.show);
 // POST /skills
 router.post('/', skillsController.create);
+// DELETE /:id
+router.delete('/:id', skillsController.delete);
+
 
 
 
