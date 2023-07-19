@@ -1,6 +1,6 @@
 const skills = [
     {id: 1, 
-    name: 'design', 
+    name: 'Design', 
     proficiency: 'good'
     },
     {id: 2, 
@@ -12,7 +12,7 @@ const skills = [
     proficiency: 'decent'
     },
     {id: 4, 
-    name: 'bug-fixing', 
+    name: 'Bug-fixing', 
     proficiency: 'reasonable'
     },
     {id: 5, 
@@ -23,7 +23,8 @@ const skills = [
 
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create
 }
 
 function getAll() {
@@ -33,4 +34,9 @@ function getAll() {
 function getOne(id) {
     id = Number(id);
     return skills.find(skill => skill.id === id);
+}
+
+function create(skill) {
+    skill.id = Date.now() % 100000000;
+    skills.push(skill);
 }
